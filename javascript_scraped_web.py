@@ -17,9 +17,7 @@ def link_library(soup):
     w = "https://www.carrefour.es"
     for i in hrefs:
         i = i.get("href")
-        print(i)
         href_list.append(i)
-    print(href_list)
     href_list_remove = []
     for y in href_list:
         href_list_remove.append(y.replace(w,""))
@@ -27,3 +25,6 @@ def link_library(soup):
     for adds in href_list_remove:
         perfect_href_list.append(w + adds)
     return perfect_href_list
+
+a = get_data(url)
+print(link_library(a))
